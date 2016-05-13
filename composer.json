@@ -1,0 +1,12 @@
+{
+  "name": "theo/exercice-cms",
+  "description": "description_text",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "autoload" : {
+    "psr-4" : {
+      "Controller\\" : "Controller/",
+      "Model\\" : "Model/"
+    }
+  }
+}

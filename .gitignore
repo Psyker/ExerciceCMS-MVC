@@ -10,7 +10,7 @@
 .idea/vcs.xml
 .idea/jsLibraryMappings.xml
 .idea/
-vendor/
+/vendor/
 
 # Sensitive or high-churn files:
 .idea/dataSources.ids
