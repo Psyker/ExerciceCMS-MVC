@@ -8,9 +8,17 @@
 
 namespace Controller;
 
+use Repository\PageRepository;
 
 class PageController
 {
+    private $repository;
+
+    public function __construct(\PDO $pdo)
+    {
+        $this->repository = new PageRepository($pdo);
+    }
+
     public function indexAction()
     {
 
@@ -28,7 +36,17 @@ class PageController
 
     public function displayAction()
     {
-
+        if (isset($_GET['route'])) {
+            $slug = $_GET['route'];
+        } else {
+            $slug = 'teletubbies';
+        }
+        $page = $this->repository->getSlug($slug);
+        if (!$page) {
+            include 'View/404.php';
+            return;
+        }
+        include 'View/index.php';
     }
 
     public function deleteAction()
@@ -45,10 +63,6 @@ class PageController
     {
 
     }
-
-
-
-
 
 
 }
