@@ -1,4 +1,5 @@
 <?php include 'layout/base.php'?>
+<?=$nav?>
 <div class="container theme-showcase" role="main">
     <div class="jumbotron">
         <h1><?=$page->h1?></h1>
