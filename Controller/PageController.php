@@ -19,20 +19,6 @@ class PageController
         $this->repository = new PageRepository($pdo);
     }
 
-    public function indexAction()
-    {
-
-    }
-
-    public function editAction()
-    {
-
-    }
-
-    public function addAction()
-    {
-
-    }
 
     public function displayAction()
     {
@@ -55,20 +41,11 @@ class PageController
      * @return string
      */
     public function getNav(){
-        // capture de l'output et placement dans l'output buffer
         ob_start();
+        $data = $this->repository->getAll();
+        // capture de l'output et placement dans l'output buffer
         include 'View/nav.php';
         return ob_get_clean();
-    }
-
-    public function deleteAction()
-    {
-
-    }
-
-    public function listAction()
-    {
-
     }
 
     public function detailsAction()

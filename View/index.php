@@ -1,4 +1,4 @@
-<?php include 'layout/base.php'?>
+<?php include 'layout/base.php' ?>
 <?=$nav?>
 <div class="container theme-showcase" role="main">
     <div class="jumbotron">
@@ -7,6 +7,7 @@
         <span class="label <?=$page->span_class?>"><?= $page->span_text ?></span>
     </div>
     <img class="img-thumbnail" src="<?= $page->img ?>" data-holder-rendered="true">
+
 </div>
 </body>
 </html>
