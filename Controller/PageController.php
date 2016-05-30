@@ -19,6 +19,14 @@ class PageController
         $this->repository = new PageRepository($pdo);
     }
 
+    public function addAction(){
+        if(count($_POST) === 0){
+            //formulaire, affichage vu
+        }else{
+            //traitement formulaire, sauvegarde
+        }
+    }
+
 
     public function displayAction()
     {
