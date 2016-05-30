@@ -5,9 +5,9 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <?php foreach($data as $content):  ?>
-                <li><a href="?route=<?=$content->slug?>"><?=$content->slug ?></a></li>
-                <?
+                <?php foreach($nav as $page):  ?>
+                <li class="<?=isActive($page->slug, $slug)?>"><a href="index.php?route=<?=$page->slug?>"><?=$page->title?></a></li>
+                <?php
                 endforeach;
                 ?>
             </ul>

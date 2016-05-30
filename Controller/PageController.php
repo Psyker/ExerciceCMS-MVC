@@ -27,23 +27,23 @@ class PageController
         } else {
             $slug = 'teletubbies';
         }
+        $nav = $this->getNav($slug);
         $page = $this->repository->getSlug($slug);
-        $nav = $this->getNav();
-        if (!$page) {
-            include 'View/404.php';
-            return;
-        }
         include 'View/index.php';
+
     }
 
     /**
      * recupération de la nav a partir d'une vue
      * @return string
      */
-    public function getNav(){
+    private function getNav($slug){
         ob_start();
-        $data = $this->repository->getAll();
+        $nav = $this->repository->getAll();
         // capture de l'output et placement dans l'output buffer
+        if ($nav === false){
+            $nav = [];
+        }
         include 'View/nav.php';
         return ob_get_clean();
     }

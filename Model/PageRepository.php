@@ -52,11 +52,7 @@ class PageRepository
                     `page`";
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute();
-        $data = [];
-        while($row = $stmt->fetchObject()){
-            $data[]= $row;
-        }
-        return $data;
+        return $stmt->fetchAll(\PDO::FETCH_OBJ);
     }
 
 }
