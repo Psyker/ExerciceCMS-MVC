@@ -46,6 +46,7 @@ class PageRepository
     public function getAll()
     {
         $sql = "SELECT
+                    `id`,
                     `title`,
                     `slug`
                 FROM
@@ -53,6 +54,26 @@ class PageRepository
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute();
         return $stmt->fetchAll(\PDO::FETCH_OBJ);
+    }
+
+    public function getById()
+    {
+        $sql = "SELECT
+                    `h1`,
+                    `body`,
+                    `title`,
+                    `span_class`,
+                    `span_text`,
+                    `img`,
+                    `slug`
+                FROM
+                    `page`
+                WHERE
+                    `id` = :id";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->bindParam(':id', $id);
+        $stmt->execute();
+        return $stmt->fetchObject();
     }
 
 }

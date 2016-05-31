@@ -10,15 +10,29 @@ namespace Controller;
 
 use Repository\PageRepository;
 
+/**
+ * Class PageController
+ * @package Controller
+ */
 class PageController
 {
+    /**
+     * @var PageRepository
+     */
     private $repository;
 
+    /**
+     * PageController constructor.
+     * @param \PDO $pdo
+     */
     public function __construct(\PDO $pdo)
     {
         $this->repository = new PageRepository($pdo);
     }
 
+    /**
+     *
+     */
     public function addAction(){
         if(count($_POST) === 0){
             //formulaire, affichage vu
@@ -28,6 +42,9 @@ class PageController
     }
 
 
+    /**
+     *
+     */
     public function displayAction()
     {
         if (isset($_GET['route'])) {
@@ -56,9 +73,25 @@ class PageController
         return ob_get_clean();
     }
 
+    /**
+     *
+     */
     public function detailsAction()
     {
+        if(!isset($_GET['a'])){
+            throw new \Exception("Merci de mettre une id dans l'url");
+        }
+        $id = $_GET['id'];
+        $data = $this->repository->getById();
+        require 'View/admin/detailsPage.php';
 
+    }
+
+
+    public function listAction()
+    {
+        $data = $this->repository->getAll();
+        include 'View/admin/listPage.php';
     }
 
 
