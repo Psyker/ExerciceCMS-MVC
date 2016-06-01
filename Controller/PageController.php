@@ -41,6 +41,10 @@ class PageController
         }
     }
 
+    public function deleteAction(){
+        $this->repository->delete();
+    }
+
 
     /**
      *

@@ -43,6 +43,14 @@ class PageRepository
         return $stmt->fetchObject();
     }
 
+    public function delete()
+    {
+        $sql = "DELETE * FROM `page` WHERE `id` = :id";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->bindParam(':id', $id);
+        $stmt->execute();
+    }
+
     public function getAll()
     {
         $sql = "SELECT

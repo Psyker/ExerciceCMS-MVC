@@ -1,12 +1,7 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Bourgoin
- * Date: 30/05/2016
- * Time: 17:05
- */
+
 chdir($rootDir = dirname(__DIR__));
-require_once 'init.php';
+require_once "init.php";
 $action ='';
 
 if(isset($_GET['a'])){
@@ -27,5 +22,8 @@ switch($action){
         }catch (\Exception $e){
             die($e->getMessage());
         }
+        break;
+    case 'delete' :
+        $page->deleteAction();
         break;
 }

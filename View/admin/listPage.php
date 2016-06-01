@@ -27,7 +27,7 @@ body {
 </nav>
 <div class="container theme-showcase" role="main">
     <h1>Pages</h1>
-    <a href="/View/admin/index.php?a=ajouter">+</a>
+    <a href="/admin/index.php?a=ajouter">+</a>
     <table class="table-bordered table-responsive table">
         <tr>
             <th>ID</th>
@@ -41,9 +41,9 @@ body {
         <td><?=$page->slug?></td>
         <td><?=$page->title?></td>
         <td>
-            <a href="/View/admin/index.php?a=details&id=<?=$page->id?>">d</a>
-            <a href="/View/admin/index.php?a=modifier&id=<?=$page->id?>">m</a>
-            <a href="/View/admin/index.php?a=supprimer&id=<?=$page->id?>">-</a>
+            <a href="index.php?a=details&id=<?=$page->id?>">d</a>
+            <a href="admin/index.php?a=modifier&id=<?=$page->id?>">m</a>
+            <a href="admin/index.php?a=supprimer&id=<?=$page->id?>">-</a>
         </td>
     </tr>
 <?php endforeach;?>
