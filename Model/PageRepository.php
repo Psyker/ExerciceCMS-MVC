@@ -73,15 +73,37 @@ class PageRepository
                     `span_class`,
                     `span_text`,
                     `img`,
-                    `slug`
+                    `slug`,
+                    `id`
                 FROM
                     `page`
                 WHERE
                     `id` = :id";
         $stmt = $this->pdo->prepare($sql);
-        $stmt->bindParam(':id', $id);
+        $stmt->bindParam(':id', $_GET['id']);
         $stmt->execute();
         return $stmt->fetchObject();
+    }
+
+    public function setPage()
+    {
+        $sql ="INSERT INTO
+                        `page` (id, title, h1, body, span_class, span_text, img, slug)
+                    VALUES
+                        (null, :title, :h1, :body, :span_class, :span_text, :img, :slug)";
+
+
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->bindParam(':title', $_POST['title']);
+        $stmt->bindParam(':h1', $_POST['h1']);
+        $stmt->bindParam(':body', $_POST['body']);
+        $stmt->bindParam(':span_class', $_POST['span_class']);
+        $stmt->bindParam(':span_text', $_POST['span_text']);
+        $stmt->bindParam(':img', $_POST['img']);
+        $stmt->bindParam(':slug', $_POST['slug']);
+        $stmt->execute();
+        header('Location: index.php?a=lister');
+
     }
 
 }

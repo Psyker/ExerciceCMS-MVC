@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Liste des pages</title>
-    <link href="../../bootstrap/css/bootstrap.css" rel="stylesheet">
-    <link href="../../bootstrap/css/" rel="stylesheet">
-    <link href="../../bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="../bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="../bootstrap/css/" rel="stylesheet">
+    <link href="../bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
     <style>
 body {
     padding-top: 70px;
@@ -27,7 +27,7 @@ body {
 </nav>
 <div class="container theme-showcase" role="main">
     <h1>Pages</h1>
-    <a href="/admin/index.php?a=ajouter">+</a>
+    <a href="./index.php?a=ajouter">+</a>
     <table class="table-bordered table-responsive table">
         <tr>
             <th>ID</th>
@@ -41,14 +41,13 @@ body {
         <td><?=$page->slug?></td>
         <td><?=$page->title?></td>
         <td>
-            <a href="index.php?a=details&id=<?=$page->id?>">d</a>
-            <a href="admin/index.php?a=modifier&id=<?=$page->id?>">m</a>
-            <a href="admin/index.php?a=supprimer&id=<?=$page->id?>">-</a>
+            <a href="./index.php?a=details&id=<?=$page->id?>">d</a>
+            <a href="./index.php?a=modifier&id=<?=$page->id?>">m</a>
+            <a href="./index.php?a=supprimer&id=<?=$page->id?>">-</a>
         </td>
     </tr>
 <?php endforeach;?>
 </table>
-<a href="">+</a>
 </div>
 </body>
 </html>

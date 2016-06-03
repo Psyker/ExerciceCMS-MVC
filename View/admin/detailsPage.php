@@ -10,9 +10,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Details de la page : <?=$title?></title>
-    <link href="../../bootstrap/css/bootstrap.css" rel="stylesheet">
-    <link href="../../bootstrap/css/" rel="stylesheet">
-    <link href="../../bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="../bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="../bootstrap/css/" rel="stylesheet">
+    <link href="../bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
     <style>
         body {
             padding-top: 70px;
@@ -27,7 +27,7 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="">Pages</a></li>
+                <li class="active"><a href="./index.php?a=lister">Pages</a></li>
             </ul>
         </div>
     </div>

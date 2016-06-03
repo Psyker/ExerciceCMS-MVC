@@ -35,9 +35,10 @@ class PageController
      */
     public function addAction(){
         if(count($_POST) === 0){
-            //formulaire, affichage vu
+            require 'View/admin/addForm.php';
         }else{
             //traitement formulaire, sauvegarde
+            $this->repository->setPage();
         }
     }
 
@@ -78,11 +79,11 @@ class PageController
     }
 
     /**
-     *
+     *Affichage des détails de page
      */
     public function detailsAction()
     {
-        if(!isset($_GET['a'])){
+        if(!isset($_GET['id'])){
             throw new \Exception("Merci de mettre une id dans l'url");
         }
         $id = $_GET['id'];
@@ -95,7 +96,7 @@ class PageController
     public function listAction()
     {
         $data = $this->repository->getAll();
-        include 'View/admin/listPage.php';
+        require 'View/admin/listPage.php';
     }
 
 
