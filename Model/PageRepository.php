@@ -45,10 +45,11 @@ class PageRepository
 
     public function delete()
     {
-        $sql = "DELETE * FROM `page` WHERE `id` = :id";
+        $sql = "DELETE FROM `page` WHERE `id` = :id LIMIT 1";
         $stmt = $this->pdo->prepare($sql);
-        $stmt->bindParam(':id', $id);
+        $stmt->bindParam(':id', $_GET['id']);
         $stmt->execute();
+        header('Location: index.php?a=lister');
     }
 
     public function getAll()
@@ -103,7 +104,32 @@ class PageRepository
         $stmt->bindParam(':slug', $_POST['slug']);
         $stmt->execute();
         header('Location: index.php?a=lister');
+    }
 
+    public function editPage()
+    {
+        $sql="UPDATE `page`
+          SET
+          `title` = :title,
+          `h1` = :h1,
+          `body` = :body,
+          `span_class` = :span_class,
+          `span_text` = :span_text,
+          `img` = :img,
+          `slug` = :slug
+          WHERE id = :id
+          LIMIT 1";
+
+        $stmt= $this->pdo->prepare($sql);
+        $stmt->bindValue(':title', $_POST['title']);
+        $stmt->bindValue(':h1', $_POST['h1']);
+        $stmt->bindValue(':body', $_POST['body']);
+        $stmt->bindValue(':span_class', $_POST['span_class']);
+        $stmt->bindValue(':span_text', $_POST['span_text']);
+        $stmt->bindValue(':img', $_POST['img']);
+        $stmt->bindValue(':img', $_POST['slug']);
+
+        $stmt->execute();
     }
 
 }

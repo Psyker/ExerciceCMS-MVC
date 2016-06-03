@@ -43,7 +43,7 @@ body {
         <td>
             <a href="./index.php?a=details&id=<?=$page->id?>">d</a>
             <a href="./index.php?a=modifier&id=<?=$page->id?>">m</a>
-            <a href="./index.php?a=supprimer&id=<?=$page->id?>">-</a>
+            <a href="./index.php?a=delete&id=<?=$page->id?>">-</a>
         </td>
     </tr>
 <?php endforeach;?>
