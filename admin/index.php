@@ -26,4 +26,7 @@ switch($action){
     case 'delete' :
         $page->deleteAction();
         break;
+    case 'modifier' :
+        $page->editAction();
+        break;
 }

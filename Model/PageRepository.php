@@ -121,15 +121,16 @@ class PageRepository
           LIMIT 1";
 
         $stmt= $this->pdo->prepare($sql);
+        $stmt->bindValue(':id', $_GET['id']);
         $stmt->bindValue(':title', $_POST['title']);
         $stmt->bindValue(':h1', $_POST['h1']);
         $stmt->bindValue(':body', $_POST['body']);
         $stmt->bindValue(':span_class', $_POST['span_class']);
         $stmt->bindValue(':span_text', $_POST['span_text']);
         $stmt->bindValue(':img', $_POST['img']);
-        $stmt->bindValue(':img', $_POST['slug']);
-
+        $stmt->bindValue(':slug', $_POST['slug']);
         $stmt->execute();
+        header('Location: index.php?a=lister');
     }
 
 }

@@ -99,5 +99,16 @@ class PageController
         require 'View/admin/listPage.php';
     }
 
+    public function editAction()
+    {
+        if(count($_POST) === 0){
+            $data = $this->repository->getById();
+            require 'View/admin/editPage.php';
+        }else{
+            $this->repository->editPage();
+        }
+
+    }
+
 
 }
