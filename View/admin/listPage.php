@@ -27,7 +27,10 @@ body {
 </nav>
 <div class="container theme-showcase" role="main">
     <h1>Pages</h1>
-    <a href="./index.php?a=ajouter">+</a>
+    <p>
+
+    <a class="btn btn-primary" href="./index.php?a=ajouter">Ajouter une page</a>
+    </p>
     <table class="table-bordered table-responsive table">
         <tr>
             <th>ID</th>

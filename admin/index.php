@@ -29,4 +29,6 @@ switch($action){
     case 'modifier' :
         $page->editAction();
         break;
+    default:
+        require 'View/404.php';
 }
