@@ -45,7 +45,7 @@
         <div class="form-group">
             <label for="body" class="col-sm-2 control-label">Description</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" id="body" value="<?=$data->body ?>" name="body" placeholder="Description">
+                <textarea  class="form-control" id="body" name="body" placeholder="Description"><?=$data->body ?></textarea>
             </div>
         </div>
 
