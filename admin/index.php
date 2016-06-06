@@ -6,6 +6,7 @@ $action ='';
 
 if(isset($_GET['a'])){
     $action = $_GET['a'];
+    require 'View/admin/navAdmin.php';
 }
 
 $page = new \Controller\PageController($pdo);

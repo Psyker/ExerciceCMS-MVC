@@ -10,6 +10,7 @@
                 <?php
                 endforeach;
                 ?>
+                <li class=""><a href="./admin/index.php?a=lister">Administration</a></li>
             </ul>
         </div>
     </div>
