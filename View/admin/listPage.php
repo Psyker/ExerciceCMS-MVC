@@ -41,9 +41,9 @@ body {
         <td><?=$page->slug?></td>
         <td><?=$page->title?></td>
         <td>
-            <a href="./index.php?a=details&id=<?=$page->id?>">d</a>
-            <a href="./index.php?a=modifier&id=<?=$page->id?>">m</a>
-            <a href="./index.php?a=delete&id=<?=$page->id?>">-</a>
+            <a class="btn btn-primary" href="./index.php?a=details&id=<?=$page->id?>"><span class="glyphicon glyphicon-zoom-in"></span>&nbsp;Voir</a>
+            <a class="btn btn-warning" href="./index.php?a=modifier&id=<?=$page->id?>"><span class="glyphicon glyphicon-pencil"></span>&nbsp;Modifier</a>
+            <a class="btn btn-danger" href="./index.php?a=delete&id=<?=$page->id?>"><span class="glyphicon glyphicon-trash"></span>&nbsp;Supprimer</a>
         </td>
     </tr>
 <?php endforeach;?>
