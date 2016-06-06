@@ -8,5 +8,8 @@
       "Controller\\" : "Controller/",
       "Repository\\" : "Model/"
     }
+  },
+  "require": {
+    "intervention/image": "^2.3"
   }
 }

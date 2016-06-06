@@ -86,7 +86,7 @@ class PageRepository
         return $stmt->fetchObject();
     }
 
-    public function setPage()
+    public function setPage($filename)
     {
         $sql ="INSERT INTO
                         `page` (id, title, h1, body, span_class, span_text, img, slug)
@@ -100,7 +100,7 @@ class PageRepository
         $stmt->bindParam(':body', $_POST['body']);
         $stmt->bindParam(':span_class', $_POST['span_class']);
         $stmt->bindParam(':span_text', $_POST['span_text']);
-        $stmt->bindParam(':img', $_POST['img']);
+        $stmt->bindParam(':img', $filename);
         $stmt->bindParam(':slug', $_POST['slug']);
         $stmt->execute();
         header('Location: index.php?a=lister');

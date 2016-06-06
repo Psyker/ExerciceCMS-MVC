@@ -31,4 +31,5 @@ switch($action){
         break;
     default:
         require 'View/404.php';
+        break;
 }

@@ -9,6 +9,7 @@
 namespace Controller;
 
 use Repository\PageRepository;
+use Intervention\Image\ImageManagerStatic as Image;
 
 /**
  * Class PageController
@@ -34,12 +35,29 @@ class PageController
      *
      */
     public function addAction(){
+
         if(count($_POST) === 0){
             require 'View/admin/addForm.php';
         }else{
+            $img = Image::make($_FILES['img']["tmp_name"]);
+            $mime = $img->mime();
+            if($mime == 'image/jpeg')
+                $extension = '.jpg';
+            elseif($mime == 'image/png')
+                $extension = '.png';
+            elseif($mime == 'image/gif')
+                $extension = '.gif';
+            else
+                $extension = '';
+
+            $filename = time() . $extension;
+            $img->resize(400, 400);
+            $img->save('img/'.$filename);
             //traitement formulaire, sauvegarde
-            $this->repository->setPage();
+            $this->repository->setPage($filename);
         }
+
+
     }
 
     public function deleteAction(){
@@ -93,6 +111,8 @@ class PageController
     }
 
 
+
+
     public function listAction()
     {
         $data = $this->repository->getAll();
@@ -109,6 +129,8 @@ class PageController
         }
 
     }
+
+
 
 
 }

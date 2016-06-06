@@ -28,7 +28,7 @@
 </nav>
 <div class="container theme-showcase" role="main">
     <h1>Ajouter une nouvelle page</h1>
-    <form method="post" class="form-horizontal">
+    <form enctype="multipart/form-data" method="post" class="form-horizontal">
         <div class="form-group">
             <label for="title" class="col-sm-2 control-label">Titre (navigation)</label>
             <div class="col-sm-10">
@@ -66,7 +66,7 @@
         <div class="form-group">
             <label for="img" class="col-sm-2 control-label">Image</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" id="img" name="img" placeholder="URL de l'image">
+                <input type="file" class="form-control" id="img" name="img" placeholder="URL de l'image">
             </div>
         </div>
 
